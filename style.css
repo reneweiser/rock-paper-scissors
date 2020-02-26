@@ -1,0 +1,16 @@
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.btn {
+    background-color: slategrey;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.btn:hover {
+    background-color: rgb(71, 81, 92);
+}
