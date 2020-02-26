@@ -1,3 +1,7 @@
+#reset {
+    margin-left: 2em;
+}
+
 .container {
     margin: 0 auto;
     width: 80%;
@@ -13,4 +17,8 @@
 
 .btn:hover {
     background-color: rgb(71, 81, 92);
+}
+
+.btn:disabled {
+    background-color: lightgray;
 }
