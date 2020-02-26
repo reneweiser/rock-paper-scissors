@@ -1,5 +1,21 @@
 const options = [ 'rock', 'paper', 'scissors' ];
 const outcomes = [ 'Player wins!', 'Computer wins!', 'Draw' ];
+let score = {
+    player: 0,
+    computer: 0
+};
+
+const scoreBoard = document.querySelector('#score-board');
+const currentResult = document.querySelector('#current-result');
+const rockButton = document.querySelector('#play-rock');
+const paperButton = document.querySelector('#play-paper');
+const scissorsButton = document.querySelector('#play-scissors');
+const resetButton = document.querySelector('#reset');
+
+rockButton.addEventListener('click', () => playRound('rock'));
+paperButton.addEventListener('click', () => playRound('paper'));
+scissorsButton.addEventListener('click', () => playRound('scissors'));
+resetButton.addEventListener('click', resetScore);
 
 // From: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/math.random
 function getRandomInt(min, max) {
@@ -30,26 +46,47 @@ function getOutcome(playerSelection, computerSelection) {
     }
 }
 
-function playRound() {
-    console.log(getOutcome('rock', computerPlay()));
+function playRound(playerInput) {
+    let outcome = getOutcome(playerInput, computerPlay());
+    if (outcome.result === 0) score.player++;
+    if (outcome.result === 1) score.computer++;
+    updateCurrentOutcome(outcome);
+    updateScore();
+
+    if (score.player === 5 || score.computer === 5) {
+        gameOver();
+    }
 }
 
-function game() {
-    let score = {
+function updateCurrentOutcome(result) {
+    currentResult.innerText = result.message;
+}
+
+function updateScore() {
+    scoreBoard.innerText = `${score.player}:${score.computer}`;
+}
+
+function gameOver() {
+    if (score.player > score.computer) {
+        currentResult.innerText = 'You win!';
+    } else {
+        currentResult.innerText = 'Computer wins!';
+    }
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+}
+
+function resetScore() {
+    score = {
         player: 0,
         computer: 0
     };
-
-    for (let i = 0; i < 5; i++) {
-        let playerInput = window.prompt('Type one (rock, paper or scissors)').toLowerCase();
-        let outcome = getOutcome(playerInput, computerPlay());
-        if (outcome.result === 0) score.player++;
-        if (outcome.result === 1) score.computer++;
-        console.log(outcome.message);
-    }
-
-    console.log(`Final score: ${score.player}:${score.computer}`);
+    currentResult.innerText = '';
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+    updateScore();
 }
 
-// playRound();
-// game();
+updateScore();
