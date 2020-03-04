@@ -30,19 +30,19 @@ function computerPlay() {
 
 function getOutcome(playerSelection, computerSelection) {
     if (playerSelection === 'rock') {
-        if (computerSelection === 'rock') return { result: 2, message: `${outcomes[2]}. Rock vs Rock.` };
-        if (computerSelection === 'paper') return { result: 1, message: `${outcomes[1]}. Rock loses to Paper.` };
-        if (computerSelection === 'scissors') return { result: 0, message: `${outcomes[0]}. Rock beats Scissors.` };
+        if (computerSelection === 'rock') return { result: 2, message: `${outcomes[2]} Rock vs Rock.` };
+        if (computerSelection === 'paper') return { result: 1, message: `${outcomes[1]} Rock loses to Paper.` };
+        if (computerSelection === 'scissors') return { result: 0, message: `${outcomes[0]} Rock beats Scissors.` };
     }
     if (playerSelection === 'paper') {
-        if (computerSelection === 'rock') return { result: 0, message: `${outcomes[0]}. Paper beats Rock.` };
-        if (computerSelection === 'paper') return { result: 2, message: `${outcomes[2]}. Paper vs Paper.` };
-        if (computerSelection === 'scissors') return { result: 1, message: `${outcomes[1]}. Paper loses to Scissors.` };
+        if (computerSelection === 'rock') return { result: 0, message: `${outcomes[0]} Paper beats Rock.` };
+        if (computerSelection === 'paper') return { result: 2, message: `${outcomes[2]} Paper vs Paper.` };
+        if (computerSelection === 'scissors') return { result: 1, message: `${outcomes[1]} Paper loses to Scissors.` };
     }
     if (playerSelection === 'scissors') {
-        if (computerSelection === 'rock') return { result: 1, message: `${outcomes[1]}. Scissors lose to Rock.` };
-        if (computerSelection === 'paper') return { result: 0, message: `${outcomes[0]}. Scissors beats Paper.` };
-        if (computerSelection === 'scissors') return { result: 2, message: `${outcomes[2]}. Scissors vs Scissors.` };
+        if (computerSelection === 'rock') return { result: 1, message: `${outcomes[1]} Scissors lose to Rock.` };
+        if (computerSelection === 'paper') return { result: 0, message: `${outcomes[0]} Scissors beats Paper.` };
+        if (computerSelection === 'scissors') return { result: 2, message: `${outcomes[2]} Scissors vs Scissors.` };
     }
 }
 

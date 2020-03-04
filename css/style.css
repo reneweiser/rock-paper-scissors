@@ -1,0 +1,92 @@
+:root {
+    --textColor: #fdf6e3;
+    --Base03: #002b36;
+    --Base02: #073642;
+    --Base01: #586e75;
+    --Base00: #657b83;
+    --Base0: #839496;
+    --Base1: #93a1a1;
+    --Base2: #eee8d5;
+    --Base3: #fdf6e3;
+    --accent: rgb(196,221,138);
+    --transparent: rgba(7,54,66, 0.2);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--Base03);
+    background-image: url('../img/blank-colors-desk-electronics.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--textColor);
+}
+
+h1, h2, p {
+    margin-bottom: .75em;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 100;
+    text-align: center;
+}
+
+a {
+    color: var(--accent);
+    transition: all .2s;
+    padding: .2em .1em;
+}
+
+a:hover {
+    background-color: var(--Base0);
+}
+
+a:visited {
+    color: var(--accent);
+}
+
+.container {
+    margin: 0 auto;
+    width: 580px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game {
+    background-color: var(--Base01);
+    padding: 20px;
+    border: 20px solid var(--transparent);
+    background-clip: padding-box;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    color: var(--textColor);
+    background-color: var(--Base0);
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    padding: .2em .75em;
+}
+
+.footer {
+    background-color: rgba(7,54,66, 0.2);
+    text-align: center;
+    padding: 1em;
+}
+
+#score-board {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 5em;
+    text-align: center;
+}
+
+#current-result {
+    text-align: center;
+}

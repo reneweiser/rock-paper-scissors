@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin - Rock, Paper, Scissors</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:100,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <main class="container">
-        <h1>Rock, Paper, Scissors</h1>
-        <h2>Choose one:</h2>
-        <div class="buttons">
-            <button id="play-rock" class="btn">Rock</button>
-            <button id="play-paper" class="btn">Paper</button>
-            <button id="play-scissors" class="btn">Scissors</button>
-            <button id="reset" class="btn">Reset</button>
+        <div class="game">
+            <h1>Rock, Paper, Scissors</h1>
+            <p id="score-board"></p>
+            <p id="current-result"></p>
+            <h2>Choose your move:</h2>
+            <div class="buttons">
+                <button id="play-rock" class="btn">Rock</button>
+                <button id="play-paper" class="btn">Paper</button>
+                <button id="play-scissors" class="btn">Scissors</button>
+                <button id="reset" class="btn">Reset</button>
+            </div>
         </div>
-        <p id="score-board"></p>
-        <p id="current-result"></p>
+        <p class="footer"><a href="https://www.pexels.com/de-de/foto/bildschirm-bleistift-drinnen-elektrik-370474/">Background Image</a> by <a href="https://www.pexels.com/de-de/@nurseryart">Porapak Apichodilok</a></p>
     </main>
 </body>
-<script src="./main.js"></script>
+<script src="./js/main.js"></script>
 </html>
